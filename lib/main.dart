@@ -2,6 +2,7 @@ import 'package:animation_playground/3d_flip.dart';
 import 'package:animation_playground/bounce.dart';
 import 'package:animation_playground/fade_in_out.dart';
 import 'package:animation_playground/flip_card.dart';
+import 'package:animation_playground/press_button.dart';
 import 'package:animation_playground/pulse.dart';
 import 'package:animation_playground/slide.dart';
 import 'package:flutter/material.dart';
@@ -155,6 +156,25 @@ class Home extends StatelessWidget {
                 child: Center(
                     child: Text(
                   "card flip",
+                  style: TextStyle(color: Colors.white),
+                )),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => PressButtonScreen(),
+                    ),
+                  );
+                },
+                color: Colors.teal,
+                child: Center(
+                    child: Text(
+                  "press button",
                   style: TextStyle(color: Colors.white),
                 )),
               ),
