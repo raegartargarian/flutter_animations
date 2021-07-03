@@ -2,6 +2,7 @@ import 'package:animation_playground/3d_flip.dart';
 import 'package:animation_playground/bounce.dart';
 import 'package:animation_playground/fade_in_out.dart';
 import 'package:animation_playground/flip_card.dart';
+import 'package:animation_playground/page-transition/main_page.dart';
 import 'package:animation_playground/press_button.dart';
 import 'package:animation_playground/pulse.dart';
 import 'package:animation_playground/slide.dart';
@@ -17,7 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        iconTheme: IconThemeData(color: Colors.black),
+        primaryColor: Colors.black,
+
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -175,6 +180,25 @@ class Home extends StatelessWidget {
                 child: Center(
                     child: Text(
                   "press button",
+                  style: TextStyle(color: Colors.white),
+                )),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (ctx) => MainPageTransition(),
+                    ),
+                  );
+                },
+                color: Colors.lime,
+                child: Center(
+                    child: Text(
+                  "page transition",
                   style: TextStyle(color: Colors.white),
                 )),
               ),
